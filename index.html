@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Colesville Restoration &ndash; A Historic Experience</title>
+  <meta name="description" content="Visit the Joseph Knight Sr and Josiah Stowell historic homes in Colesville, NY. Tours available May through October.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Raleway:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    /* ── Reset & Base ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Raleway', sans-serif;
+      font-weight: 400;
+      line-height: 1.7;
+      color: #333;
+      background: #f9fafb;
+    }
+    a { color: #1c809a; text-decoration: none; transition: color .2s; }
+    a:hover { color: #00b5e2; }
+    img { max-width: 100%; height: auto; display: block; }
+
+    /* ── Header / Nav ── */
+    .site-header {
+      background: #fff;
+      box-shadow: 0 1px 4px rgba(0,0,0,.08);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .header-inner {
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 0 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+    }
+    .site-brand {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 1.25rem;
+      color: #1c809a;
+    }
+    .site-brand span { color: #00b5e2; }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1.75rem;
+    }
+    nav a {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      font-size: .875rem;
+      text-transform: uppercase;
+      letter-spacing: .04em;
+      color: #444;
+      padding: .25rem 0;
+      border-bottom: 2px solid transparent;
+      transition: color .2s, border-color .2s;
+    }
+    nav a:hover, nav a.active {
+      color: #1c809a;
+      border-bottom-color: #00b5e2;
+    }
+
+    /* Mobile nav toggle */
+    .nav-toggle { display: none; background: none; border: none; cursor: pointer; padding: .5rem; }
+    .nav-toggle span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: #1c809a;
+      margin: 5px 0;
+      transition: .3s;
+    }
+
+    /* ── Hero ── */
+    .hero {
+      background: linear-gradient(135deg, #1c809a 0%, #00b5e2 60%, #0097c4 100%);
+      color: #fff;
+      text-align: center;
+      padding: 5rem 1.25rem 4.5rem;
+    }
+    .hero h1 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: clamp(1.75rem, 4vw, 2.75rem);
+      font-weight: 700;
+      margin-bottom: .75rem;
+      line-height: 1.25;
+    }
+    .hero p {
+      font-size: clamp(1rem, 2vw, 1.2rem);
+      font-weight: 300;
+      max-width: 680px;
+      margin: 0 auto;
+      opacity: .92;
+    }
+
+    /* ── Layout ── */
+    .container {
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 0 1.25rem;
+    }
+    .content-grid {
+      display: grid;
+      grid-template-columns: 1fr 360px;
+      gap: 2.5rem;
+      padding: 3rem 0 4rem;
+    }
+
+    /* ── Main Content ── */
+    .main-content h2 {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 1.5rem;
+      color: #1c809a;
+      margin-bottom: 1rem;
+    }
+    .main-content p { margin-bottom: 1.25rem; }
+
+    .season-box {
+      background: #fff;
+      border-left: 4px solid #00b5e2;
+      border-radius: 8px;
+      padding: 1.5rem 1.75rem;
+      margin: 2rem 0;
+      box-shadow: 0 2px 8px rgba(0,0,0,.06);
+    }
+    .season-box h3 {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 1.15rem;
+      color: #1c809a;
+      margin-bottom: .75rem;
+    }
+    .season-box ul {
+      list-style: none;
+      padding: 0;
+    }
+    .season-box li {
+      padding: .35rem 0;
+      padding-left: 1.25rem;
+      position: relative;
+    }
+    .season-box li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: .7rem;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #00b5e2;
+    }
+
+    .address-card {
+      background: #fff;
+      border-radius: 8px;
+      padding: 1.5rem 1.75rem;
+      margin: 1rem 0;
+      box-shadow: 0 2px 8px rgba(0,0,0,.06);
+    }
+    .address-card h4 {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      color: #1c809a;
+      margin-bottom: .4rem;
+    }
+    .address-card p { margin-bottom: .5rem; }
+    .address-card .gps { font-size: .85rem; color: #666; }
+
+    .map-images {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+      margin: 2rem 0;
+    }
+    .map-images img {
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,.1);
+      width: 100%;
+    }
+
+    /* ── Sidebar ── */
+    .sidebar > div {
+      background: #fff;
+      border-radius: 8px;
+      padding: 1.5rem 1.5rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,.06);
+      margin-bottom: 1.5rem;
+    }
+    .sidebar h3 {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 1.05rem;
+      color: #1c809a;
+      margin-bottom: .75rem;
+      padding-bottom: .5rem;
+      border-bottom: 2px solid #e8f6fa;
+    }
+    .sidebar p { margin-bottom: .75rem; font-size: .95rem; }
+    .sidebar .contact-line {
+      display: flex;
+      align-items: baseline;
+      gap: .4rem;
+      margin-bottom: .4rem;
+      font-size: .93rem;
+    }
+    .sidebar .contact-line strong { white-space: nowrap; }
+    .sidebar .venmo-qr {
+      max-width: 180px;
+      margin: .75rem auto 0;
+      border-radius: 6px;
+    }
+    .sidebar .cabinet-photo {
+      border-radius: 6px;
+      margin-top: .75rem;
+    }
+
+    .btn {
+      display: inline-block;
+      background: linear-gradient(135deg, #1c809a, #00b5e2);
+      color: #fff;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      font-size: .9rem;
+      padding: .6rem 1.5rem;
+      border-radius: 6px;
+      transition: opacity .2s;
+    }
+    .btn:hover { opacity: .88; color: #fff; }
+
+    /* ── Footer ── */
+    .site-footer {
+      background: #1c809a;
+      color: rgba(255,255,255,.85);
+      text-align: center;
+      padding: 2rem 1.25rem;
+      font-size: .9rem;
+    }
+    .site-footer a { color: #b3e8f5; }
+
+    /* ── Responsive ── */
+    @media (max-width: 900px) {
+      .content-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    @media (max-width: 680px) {
+      nav ul.open { display: flex; }
+      nav ul {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 64px;
+        left: 0;
+        right: 0;
+        background: #fff;
+        box-shadow: 0 4px 12px rgba(0,0,0,.1);
+        padding: 1rem 1.5rem;
+        gap: .75rem;
+      }
+      .nav-toggle { display: block; }
+      .hero { padding: 3.5rem 1rem 3rem; }
+      .map-images { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Header -->
+<header class="site-header">
+  <div class="header-inner">
+    <div class="site-brand">Colesville <span>Restoration</span></div>
+    <button class="nav-toggle" aria-label="Toggle navigation" onclick="document.querySelector('nav ul').classList.toggle('open')">
+      <span></span><span></span><span></span>
+    </button>
+    <nav>
+      <ul>
+        <li><a href="/" class="active">Home</a></li>
+        <li><a href="#">News</a></li>
+        <li><a href="#">Events</a></li>
+        <li><a href="#">In Memoriam</a></li>
+        <li><a href="docent-info.html">Docent Info</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<!-- Hero -->
+<section class="hero">
+  <h1>Welcome to the Colesville Restoration Site</h1>
+  <p>This is the Joseph Knight&nbsp;Sr and Josiah Stowell Colesville Branch Homes</p>
+</section>
+
+<!-- Main Content -->
+<div class="container">
+  <div class="content-grid">
+
+    <!-- Left Column -->
+    <main class="main-content">
+      <h2>Plan Your Visit</h2>
+      <p>We had an outstanding 2024 season, we exceeded all expectations with how many visitors we had. We have the homes closed for the winter, but we expect next summer to be another busy year. We hope to have many tour groups and families stop by to see the homes and feel the sweet spirit of these historic homes.</p>
+      <p>Thank you to our Docents who give their time to come and serve, they do a great job telling the story of the faith and sacrifice of the Knight family.</p>
+      <p>For information on becoming a docent &ndash; follow this link: <a href="docent-info.html">Docent Information Page</a></p>
+      <p>For questions or more information email <a href="mailto:richardservice65@gmail.com">richardservice65@gmail.com</a></p>
+
+      <!-- Season Info -->
+      <div class="season-box">
+        <h3>2026 Season</h3>
+        <ul>
+          <li><strong>Dates:</strong> Monday, May 5 through Sunday, October 26th</li>
+          <li><strong>Monday &ndash; Saturday:</strong> 9 am &ndash; 6 pm</li>
+          <li><strong>Sunday:</strong> 2 &ndash; 6 pm</li>
+          <li>Please call ahead to be sure our docents know you are coming.</li>
+          <li>Allow at least 1 hour if you want to see both homes. If your time is more limited, just let the docents know and they will happily accommodate your travel timeline needs.</li>
+          <li><strong>Reservations:</strong> <a href="tel:607-321-3897">607-321-3897</a></li>
+        </ul>
+      </div>
+
+      <!-- Addresses -->
+      <h2>Location &amp; Directions</h2>
+      <div class="address-card">
+        <h4>Knight Home</h4>
+        <p>1963 E Windsor Rd, Nineveh, NY 13813</p>
+        <p class="gps">GPS: 42.187181, -75.605549</p>
+      </div>
+      <div class="address-card">
+        <h4>Stowell Home</h4>
+        <p>323 State Highway 7, Afton, NY 13730</p>
+        <p class="gps">GPS: 42.210317, -75.585171</p>
+      </div>
+      <p style="margin-top: 1rem; font-size: .92rem; color: #666;"><em>Note: Some visitors have trouble getting driving directions to the above addresses. Use the GPS coordinates if needed.</em></p>
+
+      <!-- Maps -->
+      <div class="map-images">
+        <img src="images/Palmyratofarmmap.jpg" alt="Map showing route from Palmyra to the Knight Farm">
+        <img src="images/image-1.png" alt="Map of the Nineveh area showing home locations">
+      </div>
+    </main>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+
+      <!-- Schedule a Tour -->
+      <div>
+        <h3>Schedule a Tour</h3>
+        <div class="contact-line"><strong>Call:</strong> <a href="tel:607-321-3897">607-321-3897</a></div>
+        <div class="contact-line"><strong>Email:</strong> <a href="mailto:servicerichard65@gmail.com">servicerichard65@gmail.com</a></div>
+        <a href="tel:607-321-3897" class="btn" style="margin-top: .75rem;">Call Now</a>
+      </div>
+
+
+    </aside>
+
+  </div>
+</div>
+
+<!-- Footer -->
+<footer class="site-footer">
+  <p>Colesville Restoration &copy; 2026. All Rights Reserved.</p>
+</footer>
+
+</body>
+</html>
