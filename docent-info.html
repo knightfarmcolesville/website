@@ -208,6 +208,10 @@
     }
     .btn:hover { opacity: .88; }
 
+    .video-wrap { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; margin: 1rem 0 1.25rem; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,.12); }
+    .video-wrap iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; border-radius: 8px; }
+    .video-label { font-family: 'Montserrat', sans-serif; font-weight: 600; font-size: 1rem; color: #2a6f83; margin: 1.5rem 0 .5rem; }
+
     /* Footer */
     .site-footer {
       background: #1c809a;
@@ -283,6 +287,18 @@
   <h2>What You Can Expect to Pay for and Where to Get What You Need</h2>
   <p>You will need to pay your own way to New York.</p>
   <p>You will have to buy food and cook your own meals or eat out.</p>
+
+  <h2>Instructional Videos</h2>
+
+  <p class="video-label">The Joseph Knight Sr. Farm</p>
+  <div class="video-wrap">
+    <iframe src="https://www.youtube.com/embed/9Wdf9gAui28" title="The Joseph Knight Sr. Farm" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+
+  <p class="video-label">The Josiah Stowell Home</p>
+  <div class="video-wrap">
+    <iframe src="https://www.youtube.com/embed/iM-xSx-aRWA" title="The Josiah Stowell Home" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
 
   <p class="updated-note">Updated March 2026</p>
 
