@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-F9C1SDECRX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-F9C1SDECRX');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gallery &ndash; Colesville Restoration</title>
+  <meta name="description" content="Photo gallery of the Joseph Knight Sr Farm and Josiah Stowell Home in Colesville, NY.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Raleway:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    /* ── Reset & Base ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Raleway', sans-serif;
+      font-weight: 400;
+      line-height: 1.7;
+      color: #333;
+      background: #f9fafb;
+    }
+    a { color: #1c809a; text-decoration: none; transition: color .2s; }
+    a:hover { color: #00b5e2; }
+    img { max-width: 100%; height: auto; display: block; }
+
+    /* ── Header / Nav ── */
+    .site-header {
+      background: #fff;
+      box-shadow: 0 1px 4px rgba(0,0,0,.08);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .header-inner {
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 0 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+    }
+    .site-brand {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 1.25rem;
+      color: #1c809a;
+    }
+    .site-brand span { color: #00b5e2; }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1.75rem;
+    }
+    nav a {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      font-size: .875rem;
+      text-transform: uppercase;
+      letter-spacing: .04em;
+      color: #444;
+      padding: .25rem 0;
+      border-bottom: 2px solid transparent;
+      transition: color .2s, border-color .2s;
+    }
+    nav a:hover, nav a.active {
+      color: #1c809a;
+      border-bottom-color: #00b5e2;
+    }
+
+    /* Mobile nav toggle */
+    .nav-toggle { display: none; background: none; border: none; cursor: pointer; padding: .5rem; }
+    .nav-toggle span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: #1c809a;
+      margin: 5px 0;
+      transition: .3s;
+    }
+
+    /* ── Hero ── */
+    .hero {
+      background: linear-gradient(135deg, #1c809a 0%, #00b5e2 60%, #0097c4 100%);
+      color: #fff;
+      text-align: center;
+      padding: 3.5rem 1.25rem 3rem;
+    }
+    .hero h1 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: clamp(1.75rem, 4vw, 2.75rem);
+      font-weight: 700;
+      margin-bottom: .75rem;
+      line-height: 1.25;
+    }
+    .hero p {
+      font-size: clamp(1rem, 2vw, 1.2rem);
+      font-weight: 300;
+      max-width: 680px;
+      margin: 0 auto;
+      opacity: .92;
+    }
+
+    /* ── Gallery Grid ── */
+    .container {
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 0 1.25rem;
+    }
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+      padding: 3rem 0 4rem;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .gallery-item {
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,.06);
+      overflow: hidden;
+      transition: box-shadow .2s;
+    }
+    .gallery-item:hover {
+      box-shadow: 0 4px 16px rgba(0,0,0,.12);
+    }
+    .gallery-item img {
+      width: 100%;
+      object-fit: cover;
+    }
+    .gallery-item figcaption {
+      padding: .75rem 1rem;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      font-size: .9rem;
+      color: #1c809a;
+    }
+
+    /* ── Footer ── */
+    .site-footer {
+      background: #1c809a;
+      color: rgba(255,255,255,.85);
+      text-align: center;
+      padding: 2rem 1.25rem;
+      font-size: .9rem;
+    }
+    .site-footer a { color: #b3e8f5; }
+
+    /* ── Responsive ── */
+    @media (max-width: 680px) {
+      nav ul.open { display: flex; }
+      nav ul {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 64px;
+        left: 0;
+        right: 0;
+        background: #fff;
+        box-shadow: 0 4px 12px rgba(0,0,0,.1);
+        padding: 1rem 1.5rem;
+        gap: .75rem;
+      }
+      .nav-toggle { display: block; }
+      .gallery-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Header -->
+<header class="site-header">
+  <div class="header-inner">
+    <div class="site-brand"><a href="index.html" style="color:inherit;text-decoration:none;">Colesville <span>Restoration</span></a></div>
+    <button class="nav-toggle" aria-label="Toggle navigation" onclick="document.querySelector('nav ul').classList.toggle('open')">
+      <span></span><span></span><span></span>
+    </button>
+    <nav>
+      <ul>
+        <li><a href="directions.html">Directions</a></li>
+        <li><a href="donate.html">Donate</a></li>
+        <li><a href="history.html">History</a></li>
+        <li><a href="gallery.html" class="active">Gallery</a></li>
+        <li><a href="docent-info.html">Docents</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<!-- Hero -->
+<section class="hero">
+  <h1>Gallery</h1>
+  <p>Photos of the Knight Farm and Stowell Home historic sites</p>
+</section>
+
+<!-- Gallery -->
+<div class="container">
+  <div class="gallery-grid">
+
+    <figure class="gallery-item">
+      <img src="images/gallery/knight_farm.jpg" alt="Knight Farm">
+      <figcaption>The Knight Farm Home</figcaption>
+    </figure>
+
+    <figure class="gallery-item">
+      <img src="images/gallery/original_members.jpg" alt="Original Members">
+      <figcaption>List of the original members of the Colesville Branch</figcaption>
+    </figure>
+    <figure class="gallery-item">
+      <img src="images/gallery/hyrum_first_branch_president.jpg" alt="Hyrum, First Branch President">
+      <figcaption>Hyrum Smith was the first president of the Colesville Branch. This is the spot where he likeliy led the branch meetings. </figcaption>
+    </figure>
+    <figure class="gallery-item">
+      <img src="images/gallery/branch_meeting_room.jpg" alt="Branch Meeting Room">
+      <figcaption>Meeting room of the Colesville Branch</figcaption>
+    </figure>
+
+    <figure class="gallery-item">
+      <img src="images/gallery/joseph_and_hyrum.png" alt="Joseph and Hyrum">
+      <figcaption>Statue of Joseph and Hyrum outside the Knight Farm Home</figcaption>
+    </figure>
+
+    <figure class="gallery-item">
+      <img src="images/gallery/joseph_smith_bronze_statue.jpg" alt="Joseph Smith Bronze Statue">
+      <figcaption>Bronze statue of Joseph Smith outside the Stowell Home</figcaption>
+    </figure>
+
+
+    <figure class="gallery-item">
+      <img src="images/gallery/bible.jpg" alt="Bible">
+      <figcaption>An 1828 Cooperstorn edition of the Bible, the sort that would have been in most Christian homes in the area.</figcaption>
+    </figure>
+
+    <figure class="gallery-item">
+      <img src="images/gallery/polly_needlepoint.jpg" alt="Polly Needlepoint">
+      <figcaption>Polly Knight's 1819 needlepoint. Polly migrated westward with the Saints from Colesville to Ohio and then to Independence Missouri</figcaption>
+    </figure>
+
+
+    <figure class="gallery-item">
+      <img src="images/gallery/stowell_home.png" alt="Stowell Home">
+      <figcaption>The Stowell Home</figcaption>
+    </figure>
+
+    <figure class="gallery-item">
+      <img src="images/gallery/stowell_home_front_parlor.jpg" alt="Stowell Home Front Parlor">
+      <figcaption>Front parlor of the Stowell Home, where Joseph proposed to Emma</figcaption>
+    </figure>
+
+    <figure class="gallery-item">
+      <img src="images/gallery/incorrect_road_marker.png" alt="Incorrect Road Marker">
+      <figcaption>A retired local road marker with incorrect historical information</figcaption>
+    </figure>
+
+  </div>
+</div>
+
+<!-- Footer -->
+<footer class="site-footer">
+  <p>Colesville Restoration &copy; 2026. All Rights Reserved.</p>
+</footer>
+
+</body>
+</html>
